@@ -1,2 +1,1 @@
-// Design system package - fonts and config will be added in Task 2
-export {};
+export { playfair, sourceSerif, jetbrainsMono, fontVariables } from "./fonts";

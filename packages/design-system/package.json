@@ -10,7 +10,13 @@
     "./globals.css": "./globals.css",
     "./fonts": "./fonts.ts"
   },
+  "peerDependencies": {
+    "next": ">=14",
+    "tailwindcss": ">=4"
+  },
   "devDependencies": {
+    "next": "16.2.2",
+    "tailwindcss": "^4",
     "typescript": "^5.7.0"
   }
 }
