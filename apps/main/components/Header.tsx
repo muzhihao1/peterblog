@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 /**
  * Navigation items displayed in the main header.
@@ -22,16 +26,23 @@ const readingUrl =
 /**
  * Sticky site header with frosted-glass effect and primary navigation.
  *
- * Renders the "Peter Mu / Lab" brand mark on the left and the main nav
- * links on the right. The active link is determined by matching `currentPath`
- * against each nav item's `href`.
+ * On desktop (md+), nav links render inline to the right of the brand mark.
+ * On mobile (<md), a hamburger button toggles a vertical dropdown menu
+ * that slides in below the header bar. Clicking any link closes the menu.
  *
- * @param currentPath - The current route path used to highlight the active nav item.
+ * Uses `usePathname()` from Next.js to highlight the active nav item.
  */
-export function Header({ currentPath = "/" }: { currentPath?: string }) {
+export function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const currentPath = usePathname();
+
+  /** Close the mobile menu when a link is tapped. */
+  const handleLinkClick = () => setMenuOpen(false);
+
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-content-wide items-center justify-between px-10 py-5 max-md:px-5">
+        {/* Brand mark */}
         <Link href="/" className="flex items-baseline gap-2">
           <span className="font-heading text-lg font-bold text-text-primary">
             Peter Mu
@@ -40,6 +51,8 @@ export function Header({ currentPath = "/" }: { currentPath?: string }) {
             Lab
           </span>
         </Link>
+
+        {/* Desktop navigation */}
         <nav className="flex items-center gap-6 max-md:hidden">
           {navItems.map((item) => (
             <Link
@@ -61,7 +74,47 @@ export function Header({ currentPath = "/" }: { currentPath?: string }) {
             Reading &rarr;
           </a>
         </nav>
+
+        {/* Mobile hamburger button */}
+        <button
+          type="button"
+          className="hidden font-mono text-2xl text-text-primary max-md:block"
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+        >
+          {menuOpen ? "\u00D7" : "\u2261"}
+        </button>
       </div>
+
+      {/* Mobile dropdown menu */}
+      {menuOpen && (
+        <nav className="hidden border-t border-border bg-bg/95 backdrop-blur-md max-md:block">
+          <div className="mx-auto flex max-w-content-wide flex-col gap-1 px-10 py-4 max-md:px-5">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={handleLinkClick}
+                className={`rounded px-3 py-2 font-mono text-nav-item uppercase ${
+                  currentPath === item.href
+                    ? "bg-accent/10 text-text-primary"
+                    : "text-text-muted hover:text-text-primary"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <a
+              href={readingUrl}
+              onClick={handleLinkClick}
+              className="rounded px-3 py-2 font-mono text-nav-item uppercase text-accent"
+            >
+              Reading &rarr;
+            </a>
+          </div>
+        </nav>
+      )}
     </header>
   );
 }
