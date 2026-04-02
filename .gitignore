@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+
+# Environment variables
+.env.local
+.env*.local
+.env
+
+# Turborepo
+.turbo/
+
+# Superpowers
+.superpowers/
+
+# Logs
+*.log
+dev.log
+
+# Sensitive files
+scripts/
+.claude/
+*-token*
+*-key*
+*-secret*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+fix-security-*.sh
+URGENT_SECURITY_*.md
+
+# Playwright MCP
+.playwright-mcp/
