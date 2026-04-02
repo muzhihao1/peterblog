@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { DayData } from "@/lib/types";
 import { HighlightItem } from "./HighlightItem";
 import { NoteItem } from "./NoteItem";
@@ -29,11 +28,9 @@ export function DayTimeline({ data }: { data: DayData }) {
         <div key={book.id} className="mb-8">
           <div className="mb-4 flex items-center gap-3">
             {book.cover_image_url ? (
-              <Image
+              <img // eslint-disable-line @next/next/no-img-element
                 src={book.cover_image_url}
                 alt={book.title}
-                width={36}
-                height={52}
                 className="h-[52px] w-9 rounded object-cover"
               />
             ) : (

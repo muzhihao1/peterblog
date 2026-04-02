@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import type { ReadwiseBook } from "@/lib/types";
 
 /**
@@ -24,12 +23,11 @@ export function BookCard({
     <button onClick={onClick} className="text-left">
       <div className="relative">
         {book.cover_image_url ? (
-          <Image
+          <img // eslint-disable-line @next/next/no-img-element
             src={book.cover_image_url}
             alt={book.title}
-            width={137}
-            height={206}
             className="aspect-[2/3] w-full rounded object-cover"
+            loading="lazy"
           />
         ) : (
           <div className="flex aspect-[2/3] w-full items-center justify-center rounded bg-accent p-2">

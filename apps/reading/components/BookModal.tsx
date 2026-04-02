@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect } from "react";
 import type { BookWithHighlights } from "@/lib/types";
 import { HighlightItem } from "./HighlightItem";
@@ -55,11 +54,9 @@ export function BookModal({
         </button>
         <div className="mb-6 flex gap-4">
           {book.cover_image_url ? (
-            <Image
+            <img // eslint-disable-line @next/next/no-img-element
               src={book.cover_image_url}
               alt={book.title}
-              width={80}
-              height={120}
               className="aspect-[2/3] w-20 rounded object-cover"
             />
           ) : (
