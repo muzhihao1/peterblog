@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Design system theme tokens for Tailwind v4.
+ * These map the shared design system values (from @peterblog/design-system)
+ * into Tailwind's CSS-first configuration using @theme.
+ */
+@theme {
+  /* Colors */
+  --color-bg: #f8f6f1;
+  --color-bg-card: #fdfcfa;
+  --color-bg-section: #f2f0eb;
+  --color-bg-tag: #e8e5df;
+  --color-text-primary: #1a1614;
+  --color-text-body: #5c5147;
+  --color-text-muted: #8a7f76;
+  --color-text-label: #6b5f54;
+  --color-accent: #2d6a4f;
+  --color-border: #e0dbd5;
+
+  /* Font families */
+  --font-heading: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-source-serif), Georgia, "PingFang SC",
+    "Microsoft YaHei", serif;
+  --font-mono: var(--font-jetbrains), "Courier New", monospace;
+
+  /* Custom font sizes */
+  --text-section-label: 10px;
+  --text-section-label--line-height: 1;
+  --text-section-label--letter-spacing: 1.5px;
+  --text-nav-item: 11px;
+  --text-nav-item--line-height: 1;
+  --text-nav-item--letter-spacing: 0.5px;
+
+  /* Max widths */
+  --max-width-content: 680px;
+  --max-width-content-wide: 720px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: #f8f6f1;
+    color: #1a1614;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  ::selection {
+    background-color: rgba(45, 106, 79, 0.15);
+  }
 }

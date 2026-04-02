@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Obsidian",
+    "description": "Local-first knowledge base and writing tool",
+    "url": "https://obsidian.md",
+    "category": "Writing"
+  },
+  {
+    "name": "Readwise",
+    "description": "Sync and review your reading highlights",
+    "url": "https://readwise.io",
+    "category": "Reading"
+  },
+  {
+    "name": "Vercel",
+    "description": "Deploy frontend applications with zero config",
+    "url": "https://vercel.com",
+    "category": "Deployment"
+  }
+]
