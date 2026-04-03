@@ -50,8 +50,9 @@ export default async function TodayPage({
     <div className="mx-auto max-w-content px-10 py-10 max-md:px-5">
       <DateNav date={dateStr} />
       <p className="mb-8 text-center font-mono text-section-label uppercase text-text-muted">
-        {dayData.books.length} books &middot; {dayData.highlightCount}{" "}
-        highlights &middot; {dayData.noteCount} notes
+        {dayData.books.length} {dayData.books.length === 1 ? "book" : "books"} &middot;{" "}
+        {dayData.highlightCount} {dayData.highlightCount === 1 ? "highlight" : "highlights"} &middot;{" "}
+        {dayData.noteCount} {dayData.noteCount === 1 ? "note" : "notes"}
       </p>
       <DayTimeline data={dayData} />
     </div>

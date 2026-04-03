@@ -74,7 +74,7 @@ export function BookModal({
               {book.author}
             </p>
             <p className="mt-2 font-mono text-section-label uppercase text-text-label">
-              {highlights.length} highlights
+              {highlights.length} {highlights.length === 1 ? "highlight" : "highlights"}
             </p>
           </div>
         </div>

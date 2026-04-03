@@ -27,7 +27,8 @@ export function ArchiveRow({ entry }: { entry: ArchiveEntry }) {
           {formatted}
         </span>
         <span className="font-mono text-[10px] text-text-body">
-          {entry.bookCount} books &middot; {entry.highlightCount} highlights
+          {entry.bookCount} {entry.bookCount === 1 ? "book" : "books"} &middot;{" "}
+          {entry.highlightCount} {entry.highlightCount === 1 ? "highlight" : "highlights"}
         </span>
       </div>
       <span className="rounded bg-accent/85 px-1.5 py-0.5 font-mono text-[9px] text-white">

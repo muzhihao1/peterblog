@@ -38,8 +38,8 @@ export function BookGrid({ books }: { books: ReadwiseBook[] }) {
       const q = search.toLowerCase();
       result = result.filter(
         (b) =>
-          b.title.toLowerCase().includes(q) ||
-          b.author.toLowerCase().includes(q)
+          (b.title || "").toLowerCase().includes(q) ||
+          (b.author || "").toLowerCase().includes(q)
       );
     }
     if (selectedYear) {
