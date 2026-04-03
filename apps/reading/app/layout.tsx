@@ -13,6 +13,19 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://reading.petermu.com"
   ),
+  openGraph: {
+    title: "Peter Mu \u2014 Reading Journal",
+    description: "What I read, highlight, and think about.",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://reading.petermu.com",
+    siteName: "Peter Mu Reading Journal",
+    locale: "zh_CN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Peter Mu \u2014 Reading Journal",
+    description: "What I read, highlight, and think about.",
+  },
 };
 
 export default function RootLayout({
