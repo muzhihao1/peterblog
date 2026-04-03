@@ -17,22 +17,25 @@ export const dynamic = "force-dynamic";
 export default async function BooksPage() {
   let books: ReadwiseBook[];
   try {
-    books = await getBooks();
+    const allBooks = await getBooks();
+    books = allBooks.filter((b) => b.category === "books");
   } catch {
     books = [];
   }
 
   return (
     <div className="mx-auto max-w-content-wide px-10 py-10 max-md:px-5">
-      <div className="mb-2 flex items-baseline justify-between">
+      <div className="animate-slide-up mb-2 flex items-baseline justify-between">
         <h1 className="font-heading text-[28px] font-bold text-text-primary">
           Book Wall
         </h1>
         <span className="font-mono text-section-label uppercase text-text-muted">
-          {books.length} books
+          {books.length} {books.length === 1 ? "book" : "books"}
         </span>
       </div>
-      <BookGrid books={books} />
+      <div className="animate-slide-up delay-1">
+        <BookGrid books={books} />
+      </div>
     </div>
   );
 }

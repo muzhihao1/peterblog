@@ -14,8 +14,10 @@ export default function BlogPage() {
   const posts = getAllPosts();
   return (
     <div className="mx-auto max-w-content px-10 py-16 max-md:px-5">
-      <h1 className="mb-8 font-heading text-[28px] font-bold text-text-primary">Writing</h1>
-      <PostList posts={posts} />
+      <h1 className="animate-slide-up mb-8 font-heading text-[28px] font-bold text-text-primary">Writing</h1>
+      <div className="animate-slide-up delay-1">
+        <PostList posts={posts} />
+      </div>
     </div>
   );
 }
