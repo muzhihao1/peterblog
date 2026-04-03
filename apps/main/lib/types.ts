@@ -43,5 +43,7 @@ export interface Tool {
   name: string;
   description: string;
   url: string;
-  category?: string;
+  workflow: string;
+  note: string;
+  pricing: string;
 }

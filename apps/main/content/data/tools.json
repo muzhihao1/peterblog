@@ -1,20 +1,90 @@
 [
   {
     "name": "Obsidian",
-    "description": "Local-first knowledge base and writing tool",
+    "description": "本地优先的知识库和写作工具",
     "url": "https://obsidian.md",
-    "category": "Writing"
+    "workflow": "写作流",
+    "note": "我所有的想法都从这里开始。用 daily note 记碎片，用 MOC 连接主题，配合 Readwise 插件自动导入阅读高亮。",
+    "pricing": "免费"
   },
   {
     "name": "Readwise",
-    "description": "Sync and review your reading highlights",
+    "description": "阅读高亮同步和复习系统",
     "url": "https://readwise.io",
-    "category": "Reading"
+    "workflow": "写作流",
+    "note": "把 Kindle、微信读书的高亮自动同步。每天复习 5 条旧高亮，意外发现很多被遗忘的好想法。",
+    "pricing": "$8/月"
+  },
+  {
+    "name": "Typora",
+    "description": "所见即所得的 Markdown 编辑器",
+    "url": "https://typora.io",
+    "workflow": "写作流",
+    "note": "写长文的时候用它，实时预览让排版更直观。和 Obsidian 配合使用。",
+    "pricing": "$15 买断"
+  },
+  {
+    "name": "Claude Code",
+    "description": "AI 编程助手",
+    "url": "https://claude.ai/code",
+    "workflow": "开发流",
+    "note": "这个博客就是用它从零写出来的。真正的 pair programming 体验，理解上下文的能力很强。",
+    "pricing": "$20/月"
+  },
+  {
+    "name": "Cursor",
+    "description": "AI 增强的代码编辑器",
+    "url": "https://cursor.com",
+    "workflow": "开发流",
+    "note": "日常写代码的主力编辑器。Tab 补全和 inline edit 用起来非常自然。",
+    "pricing": "$20/月"
   },
   {
     "name": "Vercel",
-    "description": "Deploy frontend applications with zero config",
+    "description": "零配置前端部署平台",
     "url": "https://vercel.com",
-    "category": "Deployment"
+    "workflow": "开发流",
+    "note": "Push 到 GitHub 自动部署，零配置。免费版完全够个人项目用。",
+    "pricing": "免费"
+  },
+  {
+    "name": "GitHub",
+    "description": "代码托管和版本控制",
+    "url": "https://github.com",
+    "workflow": "开发流",
+    "note": "所有项目的代码仓库，配合 Vercel 实现自动化部署流程。",
+    "pricing": "免费"
+  },
+  {
+    "name": "Gemini",
+    "description": "Google 的 AI 学习辅导",
+    "url": "https://gemini.google.com",
+    "workflow": "学习流",
+    "note": "学机器学习的时候用它的学习辅导模式。把教材链接发给它，它会总结重点并反问我问题。",
+    "pricing": "免费"
+  },
+  {
+    "name": "Manus",
+    "description": "AI 研究和内容生成",
+    "url": "https://manus.im",
+    "workflow": "学习流",
+    "note": "做背景调研的利器。参加学术会议前让它帮我调研演讲者和议题，效果超预期。",
+    "pricing": "免费"
+  },
+  {
+    "name": "Runna",
+    "description": "个性化跑步训练计划",
+    "url": "https://runna.com",
+    "workflow": "生活流",
+    "note": "根据你的目标自动生成训练计划，每次跑步都有具体配速指导。对跑步新手非常友好。",
+    "pricing": "$15/月"
+  },
+  {
+    "name": "滴答清单",
+    "description": "任务管理和日程规划",
+    "url": "https://dida365.com",
+    "workflow": "生活流",
+    "note": "日常任务管理的主力。用它做每日 MIT（最重要的事），配合番茄钟保持专注。",
+    "pricing": "免费增值"
   }
 ]
